@@ -1,3 +1,8 @@
+# netlify.toml  – minimal + skip UI Next.js plugin
 [build]
-command = "npm run build"
-publish = ".next"
+command  = "npm run build"
+publish  = ".next"
+
+[build.environment]
+# Tato proměnná donutí @netlify/plugin-nextjs (i když je instalovaný z UI) se přeskočit
+NETLIFY_NEXT_PLUGIN_SKIP = "true"
