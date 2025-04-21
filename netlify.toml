@@ -1,8 +1,9 @@
-# netlify.toml  – minimal, vypíná Next.js UI‑plugin
+# netlify.toml  – vypneme UI‑plugin jednou provždy
 
 [build]
 command = "npm run build"
 publish = ".next"
 
-[build.environment]
-NETLIFY_NEXT_PLUGIN_SKIP = "true"
+[[plugins]]
+package  = "@netlify/plugin-nextjs"
+enabled  = false   # <‑‑ tohle plugin definitivně vypne
